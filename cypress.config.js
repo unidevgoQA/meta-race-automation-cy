@@ -25,4 +25,7 @@ module.exports = defineConfig({
       return require('./cypress/plugins/index.js')(on, config)
     },
   },
+  env: {
+    'login_data_path': 'cypress/fixtures/login.json',
+  }
 })
