@@ -18,11 +18,7 @@ describe('Login Test', () => {
 
 
     it('UI Test 1.1 - Validate user login functionality', () => {
-        SignUpPage.getHomePage();
-        LoginPage.clickSignIn();
-        LoginPage.enterEmail(testData.email);
-        LoginPage.enterPassword(testData.password);
-        LoginPage.clickLogin();
+        LoginPage.login(testData.email, testData.password);
         cy.contains("Good morning").should('be.visible');
 
     })

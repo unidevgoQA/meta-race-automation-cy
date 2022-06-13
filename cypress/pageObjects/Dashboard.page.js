@@ -2,9 +2,8 @@ import "cypress-iframe";
 import "cypress-xpath";
 import "cypress-localstorage-commands";
 import {TestData} from "../fixtures/testData";
-import SignUpPage from "./SignUp.page";
 
-class LoginPage {
+class DashboardPage {
     static emailField = '#email';
     static passwordField = '#password';
     static loginBtn = '.css-prfyaa';
@@ -109,14 +108,7 @@ class LoginPage {
         return this;
     }
 
-    static login = (email, password) => {
-    SignUpPage.getHomePage();
-    this.clickSignIn();
-    this.enterEmail(email);
-    this.enterPassword(password);
-    this.clickLogin();
-}
 
 }
 
-export default LoginPage;
+export default DashboardPage;

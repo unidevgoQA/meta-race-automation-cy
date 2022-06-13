@@ -79,7 +79,7 @@ export class TestData {
     static getRandomPhoneNumber = () => {
         let phoneNumber = "017";
         for (let i = 0; i < 8; i++) {
-            phoneNumber += Math.floor(Math.random() * 11);
+            phoneNumber += Math.floor(Math.random() * 8);
         }
         return phoneNumber;
     }

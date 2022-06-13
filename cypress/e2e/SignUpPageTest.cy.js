@@ -19,6 +19,7 @@ describe('Sign Up Page Test', () => {
         TestData.writeCounterFile();
         HomePage.getHomePage();
         HomePage.clickSignUp();
+        HomePage.clickNoSignUp();
         HomePage.clickPeer();
         HomePage.enterName();
         HomePage.enterEmails(testData.emailPrefix, testData.emailSuffix);        HomePage.enterPasswords();
@@ -34,6 +35,7 @@ describe('Sign Up Page Test', () => {
     it('UI Test 1.2 - SignUP as Visionary functionality', () => {
         HomePage.getHomePage();
         HomePage.clickSignUp();
+        HomePage.clickNoSignUp();
         HomePage.clickVisionary();
         HomePage.enterNameOfOrganization();
         HomePage.enterEmails(testData.emailPrefix, testData.emailSuffix);

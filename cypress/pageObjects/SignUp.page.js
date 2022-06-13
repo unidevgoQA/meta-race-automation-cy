@@ -16,6 +16,11 @@ class SignUpPage {
         return this;
     }
 
+    static clickNoSignUp = () => {
+        cy.get('.css-h2t2bd').click();
+        return this;
+    }
+
     static clickPeer = () => {
         cy.get(':nth-child(1) > .css-0 > .css-13mq7io').click();
         return this;
