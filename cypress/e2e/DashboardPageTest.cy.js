@@ -20,6 +20,10 @@ describe('Dashboard page test',() => {
         cy.get('#top-header > .chakra-link > svg').should('be.visible');
     })
 
+
+
+
+});
     it('UI Test 1.2 - Check Dashboard link is visible', () => {
         cy.get('.css-ra5upo > .chakra-text').should('be.visible');
     });
@@ -35,6 +39,3 @@ describe('Dashboard page test',() => {
     it('UI Test 1.5 - Check the Account link is visible', () => {
         cy.get('[href="/dashboard/portfolio"] > .chakra-text').should('be.visible');
     });
-
-
-});
