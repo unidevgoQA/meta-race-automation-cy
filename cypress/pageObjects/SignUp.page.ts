@@ -7,16 +7,16 @@ import {Actions} from "../support/actions";
 
 class SignUpPage {
 
-    signUpInButton = "//button[contains(text(),'SIGN IN • UP')]";
-    signUpForFreeLink = "//button[normalize-space()='SIGN UP FOR FREE']"
-    usernameField = "//input[@id='username']";
-    emailField = "//input[@id='email']";
-    nextStepBtn = "//button[normalize-space()='NEXT STEP']"
-    passwordField = "//input[@id='password']";
-    confirmPasswordField = "//input[@id='password-confirm']";
-    otpSendMsg = "//*[contains(text(), \"A code was send to\")]"
+    static signUpInButton = "//button[contains(text(),'SIGN IN • UP')]";
+    static signUpForFreeLink = "//button[normalize-space()='SIGN UP FOR FREE']"
+    static usernameField = "//input[@id='username']";
+    static emailField = "//input[@id='email']";
+    static nextStepBtn = "//button[normalize-space()='NEXT STEP']"
+    static passwordField = "//input[@id='password']";
+    static confirmPasswordField = "//input[@id='password-confirm']";
+    static otpSendMsg = "//*[contains(text(), \"A code was send to\")]"
 
-    getHomePage = () => {
+    static getHomePage = () => {
         cy.visit(Cypress.env('base_url'));
         cy.window().then((win) => {
             win.sessionStorage.clear()
@@ -26,18 +26,18 @@ class SignUpPage {
         return this;
     }
 
-    clickSignUpInButton = () => {
+    static clickSignUpInButton = () => {
         cy.xpath(this.signUpInButton).click();
         return this;
     }
 
-    clickNextStepBtn = () => {
+    static clickNextStepBtn = () => {
         cy.xpath(this.nextStepBtn).click();
         return this;
     }
 
 
-    signUp = () => {
+    static signUp = () => {
         this.getHomePage();
 
         this.clickSignUpInButton()

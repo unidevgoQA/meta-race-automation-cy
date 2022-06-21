@@ -32,7 +32,7 @@ export class Actions {
         return cy.readFile(Cypress.env('login_data_path'));
     }
 
-    static isVisible(selector) {
+    static isDisplayed(selector) {
         cy.xpath(selector).should('be.visible');
     }
 
