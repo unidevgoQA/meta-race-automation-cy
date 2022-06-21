@@ -16,7 +16,7 @@ class LoginPage {
     static sendResetInstructionsBtn = "//button[normalize-space()='SEND RESET INSTRUCTIONS']";
     static sentMessage = "//h2[normalize-space()='Email instructions sent']";
 
-    static login(email, password) {
+    static login(email: string, password: string) {
         cy.xpath(this.signInBtn).click();
         Actions.typeText(this.emailField, email);
         Actions.typeText(this.passwordField, password);
@@ -25,15 +25,15 @@ class LoginPage {
         return this;
     }
 
-    // forgetPassword(email) {
-    //     Actions.click(this.signInBtn);
-    //     Actions.click(this.forgetPasswordLink);
-    //     Actions.isVisible(this.forgetPasswordHeader);
-    //     Actions.typeText(this.emailField, email);
-    //     Actions.click(this.sendResetInstructionsBtn);
-    //     Actions.isVisible(this.sentMessage);
-    //     return this;
-    // }
+    static forgetPassword(email: string) {
+        Actions.click(this.signInBtn);
+        Actions.click(this.forgetPasswordLink);
+        Actions.isDisplayed(this.forgetPasswordHeader);
+        Actions.typeText(this.emailField, email);
+        Actions.click(this.sendResetInstructionsBtn);
+        Actions.isDisplayed(this.sentMessage);
+        return this;
+    }
 }
 
 export default LoginPage;
