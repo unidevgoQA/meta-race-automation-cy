@@ -17,5 +17,9 @@ describe('Sign Up Page Test', () => {
         cy.contains('Welcome back!').should('be.visible');
     });
 
+    it('Should be able to sign up', function () {
+        signUpPage.signUp();
+    });
+
 
 })

@@ -72,6 +72,10 @@ export class TestData {
         return this.readCounter();
     }
 
+    static generateUserName(emailPrefix, counter) {
+        return emailPrefix + "+" + counter;
+    }
+
     static generateEmailAlias(emailPrefix, counter, emailSuffix) {
         return emailPrefix + "+" + counter + emailSuffix;
     }
