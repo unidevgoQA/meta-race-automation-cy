@@ -22,6 +22,7 @@ class LoginPage {
         Actions.typeText(this.passwordField, password);
         Actions.click(this.getStartedBtn);
         cy.contains('CONNECT WALLET');
+        return this;
     }
 
     forgetPassword(email) {
@@ -31,6 +32,7 @@ class LoginPage {
         Actions.typeText(this.emailField, email);
         Actions.click(this.sendResetInstructionsBtn);
         Actions.isVisible(this.sentMessage);
+        return this;
     }
 }
 
