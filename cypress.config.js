@@ -28,6 +28,6 @@ module.exports = defineConfig({
   env: {
     'login_data_path': 'cypress/fixtures/login.json',
     'base_url': 'https://qa.metadog.racing/',
-    'baseApi': 'https://api-qa.metadog.racing',
+    'baseApi': 'https://api-dev.metadog.racing',
   }
 })

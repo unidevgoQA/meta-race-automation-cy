@@ -1,3 +1,4 @@
+import { Actions } from "../../support/actions";
 import { Api } from "./base-api";
 
 export const getRandomGameId = () => {
@@ -21,6 +22,17 @@ export const getAdminHeaders = () => {
   let userApi = new Api("/auth/sign", body, {});
   return userApi.post().then((r) => {
     return { Authorization: "Bearer " + r.body.data.accessToken };
+  });
+};
+
+export const getUserHeaders = () => {
+  Actions.readFile(Cypress.env("login_data_path")).then((loginData) => {
+    let data = loginData;
+    let body = { email: data.email, password: data.password };
+    let userApi = new Api("/auth/sign", body, {});
+    return userApi.post().then((r) => {
+      return { Authorization: "Bearer " + r.body.data.accessToken };
+    });
   });
 };
 

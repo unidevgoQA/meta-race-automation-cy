@@ -17,6 +17,7 @@ export class Api {
       url: this.baseUrl + this.endpoint,
       body: this.body,
       headers: this.headers,
+      failOnStatusCode: false,
     });
   }
 
@@ -27,6 +28,7 @@ export class Api {
         url: this.baseUrl + this.endpoint,
         body: body,
         headers: this.headers,
+        failOnStatusCode: false,
       });
     } else {
       return cy.request({
@@ -34,6 +36,7 @@ export class Api {
         url: this.baseUrl + this.endpoint,
         body: this.body,
         headers: this.headers,
+        failOnStatusCode: false,
       });
     }
   }
@@ -44,6 +47,7 @@ export class Api {
       url: this.baseUrl + this.endpoint,
       body: body,
       headers: this.headers,
+      failOnStatusCode: false,
     });
   }
 
