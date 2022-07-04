@@ -40,7 +40,7 @@
   "license": "MIT",
   "homepage": "https://www.linkedin.com/in/padmarajn/",
   "devDependencies": {
-    "cypress": "^10.0.3",
+    "cypress": "^10.3.0",
     "cypress-browser-extension-plugin": "^0.1.0",
     "cypress-metamask": "^1.0.5-development",
     "cypress-xpath": "^1.6.2",
