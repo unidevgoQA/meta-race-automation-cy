@@ -2803,7 +2803,6 @@ export class TestData {
 
   static writeCounterFile() {
     cy.readFile("cypress/fixtures/login.json").then((obj) => {
-      let counter = parseInt(obj.counter);
       obj["counter"] += 1;
       cy.writeFile("cypress/fixtures/login.json", obj);
     });
