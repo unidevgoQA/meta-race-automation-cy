@@ -1,10 +1,10 @@
 import {Api} from "./base-api";
 
-export const getAccessToken = () => {
-    cy.readFile(Cypress.env('login-data-path')).then(data => {
+export const getHeaderWithToken = () => {
+    return cy.readFile(Cypress.env('login_data_path')).then(data => {
         let api = new Api("/api/auth/login", {"email": data.email, "password": data.password});
         return api.post().then(r => {
-                return r;
+                return {"Authorization": "Bearer " + r.body.accessToken};
             }
         );
     })

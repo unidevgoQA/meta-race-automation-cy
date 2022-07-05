@@ -1,5 +1,6 @@
 import { TestData } from "../../fixtures/testData";
 import { Api } from "./base-api";
+import { getHeaderWithToken } from "./utils";
 
 describe("User login tests", () => {
 
@@ -191,6 +192,32 @@ describe("User login tests", () => {
             });
             });
 
+    it("UI Test 1.10 - '/api/wallet/connect' api test", () => {
+
+        getHeaderWithToken().then(header => {
+            console.log(header);
+            let api = new Api('/api/wallet/connect', {"email": "ss.unidev@gmail.com", "password": "5946644Ss@"}, header);
+            api.post().then(res => {
+                expect(res.status).to.equal(200);
+            })
+        }
+        )
+    });
+
+
+    it("UI Test 1.11 - '/api/wallet/funds' api test", () => {
+
+            getHeaderWithToken().then(header => {
+                    console.log(header);
+                    let api = new Api('/api/wallet/funds', {}, header);
+                    api.get().then(res => {
+                        expect(res.status).to.equal(200);
+                    })
+                }
+            )
+
+
+});
 });
 
 
