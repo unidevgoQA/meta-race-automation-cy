@@ -1,4 +1,17 @@
 {"baseApi": "https://qa.api.nami.gg",
-  "publicAddress": "0xfc9247de9626f4aad438977fcd0be6d524a00bd9"
+  "newDog": {
+    "name": "Inari",
+    "age": 10,
+    "weight": 0,
+    "fatigue": 0,
+    "injury": 0,
+    "acceleration": 0,
+    "topSpeed": 12,
+    "power": 2,
+    "reactionTime": 0,
+    "mainWeather": 0,
+    "sex": "Female",
+    "matchId": "string"
+  }
 }
 
