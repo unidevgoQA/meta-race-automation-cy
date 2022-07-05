@@ -1,4 +1,6 @@
 
+
+
 export class Api {
     constructor(endpoint, body, headers) {
         this.baseUrl = Cypress.env('baseApi');
