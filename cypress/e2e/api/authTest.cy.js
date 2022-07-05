@@ -13,7 +13,7 @@ describe("User login tests", () => {
 
 
         it("UI Test 1.1 - '/api/auth/signup/' api test", () => {
-            
+
             TestData.writeCounterFile();
 
             cy.readFile(Cypress.env('login_data_path')).then(data => {
@@ -39,7 +39,7 @@ describe("User login tests", () => {
 
 
         it("UI Test 1.2 - '/api/auth/gambler/signup/' api test", () => {
-        
+
             TestData.writeCounterFile();
 
             cy.readFile(Cypress.env('login_data_path')).then(data => {
@@ -61,12 +61,12 @@ describe("User login tests", () => {
                 })
             });
             });
-    
-    
+
+
 
 
         it("UI Test 1.3 - '/api/auth/admin/signup/' api test", () => {
-    
+
             TestData.writeCounterFile();
 
             cy.readFile(Cypress.env('login_data_path')).then(data => {
@@ -86,7 +86,7 @@ describe("User login tests", () => {
                 })
             });
             });
-    
+
 
     it("UI Test 1.4 - '/api/auth/send/otp/' api test", () => {
 
@@ -160,10 +160,37 @@ describe("User login tests", () => {
             api.post().then(res => {
                 expect(res.status).to.equal(201);
                 expect(res.body.message).to.equal("User logged in successfully");
-                
+
             })
         });
         });
-        
-}
-);
+
+    it("UI Test 1.8 - '/api/auth/role/' api test", () => {
+
+                let api = new Api('/api/auth/role', {}, {});
+                api.put().then(res => {
+                    expect(res.status).to.equal(200);
+
+                })
+            });
+
+    it("UI Test 1.9 - '/api/auth/recovery/password' api test", () => {
+
+
+            cy.readFile(Cypress.env('login_data_path')).then(data => {
+
+                let body = {
+                    "email": data.email,
+
+                };
+
+                let api = new Api('/api/auth/recovery/password', body, {});
+                api.post().then(res => {
+                    expect(res.status).to.equal(200);
+                })
+            });
+            });
+
+});
+
+
